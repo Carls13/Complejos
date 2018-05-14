@@ -38,7 +38,7 @@ public class ControladorCalcu implements ActionListener {
         this.calcu.multiplicar.addActionListener(this);
         this.calcu.sumar.addActionListener(this);
         this.calcu.restar.addActionListener(this);
-        this.calcu.transformar.addActionListener(this);
+        this.calcu.btnz2.addActionListener(this);
         this.calcu.restaurar2.addActionListener(this);
         this.calcu.restaurar.addActionListener(this);
     }
@@ -49,16 +49,16 @@ public class ControladorCalcu implements ActionListener {
         if (e.getSource() == this.calcu.sumar) {
             Complejos z1 = new Complejos(0, 0);
             Complejos z2 = new Complejos(0, 0);
-            this.setValues(z1, this.calcu.c1Arg, this.calcu.c1Modulo);
-            this.setValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
+            this.setFasorialValues(z1, this.calcu.c1Arg, this.calcu.c1Modulo);
+            this.setFasorialValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
             Complejos c3 = this.suma(z1, z2);
             this.imprime(c3);
         }
         if (e.getSource() == this.calcu.restar) {
             Complejos z1 = new Complejos(0, 0);
             Complejos z2 = new Complejos(0, 0);
-            this.setValues(z1, this.calcu.c1Arg, this.calcu.c1Modulo);
-            this.setValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
+            this.setFasorialValues(z1, this.calcu.c1Arg, this.calcu.c1Modulo);
+            this.setFasorialValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
 
             Complejos c3 = this.resta(z1, z2);
             this.imprime(c3);
@@ -66,8 +66,8 @@ public class ControladorCalcu implements ActionListener {
         if (e.getSource() == this.calcu.multiplicar) {
             Complejos z1 = new Complejos(0, 0);
             Complejos z2 = new Complejos(0, 0);
-            this.setValues(z1, this.calcu.c1Arg, this.calcu.c1Modulo);
-            this.setValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
+            this.setFasorialValues(z1, this.calcu.c1Arg, this.calcu.c1Modulo);
+            this.setFasorialValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
             Complejos c3 = this.producto(z1, z2);
             this.imprime(c3);
         }
@@ -75,8 +75,8 @@ public class ControladorCalcu implements ActionListener {
         if (e.getSource() == this.calcu.dividir) {
             Complejos z1 = new Complejos(0, 0);
             Complejos z2 = new Complejos(0, 0);
-            this.setValues(z1, this.calcu.c1Arg, this.calcu.c1Modulo);
-            this.setValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
+            this.setFasorialValues(z1, this.calcu.c1Arg, this.calcu.c1Modulo);
+            this.setFasorialValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
             Complejos c3 = this.division(z1, z2);
             this.imprime(c3);
         }
@@ -88,6 +88,12 @@ public class ControladorCalcu implements ActionListener {
           limpiar(this.calcu.pReal,this.calcu.pImag);
 
         }
+        if (e.getSource() == this.calcu.btnz2) {
+          Complejos z1 = new Complejos(0, 0);
+         this.setBinomicaValues(z1, this.calcu.pReal, this.calcu.pImag);
+         this.imprimeFasorial(z1, this.calcu.resTrans);
+
+        }
     }
 
     public void limpiar(JTextField tf1, JTextField tf2) {
@@ -95,8 +101,13 @@ public class ControladorCalcu implements ActionListener {
         tf2.setText("");
         
     }
+     public void setBinomicaValues(Complejos z, JTextField jtfReal,
+            JTextField jtfImg) {
+        z.setpReal((float) Float.parseFloat(jtfReal.getText()));
+        z.setpImaginaria((float) Float.parseFloat(jtfImg.getText()));
+    }
 
-    public void setValues(Complejos z, JTextField jtfArg,
+    public void setFasorialValues(Complejos z, JTextField jtfArg,
             JTextField jtfMod) {
         z.setArgumento((float) Float.parseFloat(jtfArg.getText()));
         z.setModulo((float) Float.parseFloat(jtfMod.getText()));
@@ -152,7 +163,6 @@ public class ControladorCalcu implements ActionListener {
     }
 
     public void imprime(Complejos z) {
-        System.out.println(z.getpReal());
         this.imprimeFasorial(z, this.calcu.resFas);
         this.imprimeBinomica(z, this.calcu.resBin);
     }
@@ -162,7 +172,7 @@ public class ControladorCalcu implements ActionListener {
         DecimalFormat df = new DecimalFormat("#,###.##");
         fas.setText(""
                 + df.format(z.modulo)
-                + "|" + z.argumento + "°");
+                + "|" + df.format(z.argumento) + "°");
     }
 
     public void imprimeBinomica(Complejos z, JLabel bin) {

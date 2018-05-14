@@ -45,20 +45,26 @@ public class Calculos extends javax.swing.JFrame {
         pImag = new javax.swing.JTextField();
         resTrans = new javax.swing.JLabel();
         restaurar2 = new javax.swing.JButton();
-        transformar = new javax.swing.JButton();
+        btnz2 = new javax.swing.JButton();
         restar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        transformar1 = new javax.swing.JButton();
+        btnz1 = new javax.swing.JButton();
+        btnz1Trans = new javax.swing.JButton();
+        btnz2Trans = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(451, 350));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Calculadora de números complejos");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 380, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 380, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
@@ -68,7 +74,7 @@ public class Calculos extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setText("|z|");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
@@ -93,7 +99,7 @@ public class Calculos extends javax.swing.JFrame {
         jLabel7.setText("Re(z)");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Transformar de forma binómica a fasorial");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
@@ -101,9 +107,9 @@ public class Calculos extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setForeground(java.awt.Color.white);
         jLabel8.setText("Im(z)");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 40, 20));
 
-        c1Modulo.setForeground(null);
+        c1Modulo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         c1Modulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c1ModuloActionPerformed(evt);
@@ -111,7 +117,7 @@ public class Calculos extends javax.swing.JFrame {
         });
         getContentPane().add(c1Modulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 50, -1));
 
-        c1Arg.setForeground(null);
+        c1Arg.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         c1Arg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c1ArgActionPerformed(evt);
@@ -120,7 +126,7 @@ public class Calculos extends javax.swing.JFrame {
         getContentPane().add(c1Arg, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 50, -1));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 160, 0));
 
-        c2Modulo.setForeground(null);
+        c2Modulo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         c2Modulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c2ModuloActionPerformed(evt);
@@ -128,7 +134,7 @@ public class Calculos extends javax.swing.JFrame {
         });
         getContentPane().add(c2Modulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 50, -1));
 
-        c2Arg.setForeground(null);
+        c2Arg.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         c2Arg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c2ArgActionPerformed(evt);
@@ -136,7 +142,6 @@ public class Calculos extends javax.swing.JFrame {
         });
         getContentPane().add(c2Arg, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 50, -1));
 
-        sumar.setBackground(null);
         sumar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         sumar.setText("+");
         sumar.setOpaque(false);
@@ -147,7 +152,6 @@ public class Calculos extends javax.swing.JFrame {
         });
         getContentPane().add(sumar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, -1, -1));
 
-        multiplicar.setBackground(null);
         multiplicar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         multiplicar.setText("x");
         multiplicar.setOpaque(false);
@@ -158,7 +162,6 @@ public class Calculos extends javax.swing.JFrame {
         });
         getContentPane().add(multiplicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
 
-        dividir.setBackground(null);
         dividir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         dividir.setText("/");
         dividir.setOpaque(false);
@@ -169,7 +172,6 @@ public class Calculos extends javax.swing.JFrame {
         });
         getContentPane().add(dividir, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 40, -1));
 
-        restaurar.setBackground(null);
         restaurar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         restaurar.setText("Restaurar");
         restaurar.setOpaque(false);
@@ -178,21 +180,18 @@ public class Calculos extends javax.swing.JFrame {
                 restaurarActionPerformed(evt);
             }
         });
-        getContentPane().add(restaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 110, -1));
+        getContentPane().add(restaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 110, -1));
 
         pReal.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        pReal.setForeground(null);
         getContentPane().add(pReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 50, -1));
 
         pImag.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        pImag.setForeground(null);
         getContentPane().add(pImag, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 50, -1));
 
         resTrans.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        resTrans.setForeground(null);
-        getContentPane().add(resTrans, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 140, 80));
+        resTrans.setForeground(java.awt.Color.white);
+        getContentPane().add(resTrans, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 140, 20));
 
-        restaurar2.setBackground(null);
         restaurar2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         restaurar2.setText("Restaurar");
         restaurar2.setOpaque(false);
@@ -201,20 +200,18 @@ public class Calculos extends javax.swing.JFrame {
                 restaurar2ActionPerformed(evt);
             }
         });
-        getContentPane().add(restaurar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 110, -1));
+        getContentPane().add(restaurar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 110, -1));
 
-        transformar.setBackground(null);
-        transformar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        transformar.setText("Transformar");
-        transformar.setOpaque(false);
-        transformar.addActionListener(new java.awt.event.ActionListener() {
+        btnz2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        btnz2.setText("z2");
+        btnz2.setOpaque(false);
+        btnz2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transformarActionPerformed(evt);
+                btnz2ActionPerformed(evt);
             }
         });
-        getContentPane().add(transformar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
+        getContentPane().add(btnz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 50, 30));
 
-        restar.setBackground(null);
         restar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         restar.setText("-");
         restar.setOpaque(false);
@@ -228,18 +225,67 @@ public class Calculos extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel9.setForeground(java.awt.Color.white);
         jLabel9.setText("Resultado en forma fasorial:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, 20));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, -1, 20));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel10.setForeground(java.awt.Color.white);
         jLabel10.setText("Resultado en forma binómica:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, 20));
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel12.setForeground(java.awt.Color.white);
+        jLabel12.setText("Resultado en forma fasorial:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, 20));
+
+        transformar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        transformar1.setText("Transformar");
+        transformar1.setOpaque(false);
+        transformar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transformar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(transformar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+
+        btnz1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        btnz1.setText("z1");
+        btnz1.setOpaque(false);
+        btnz1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnz1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 50, 30));
+
+        btnz1Trans.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        btnz1Trans.setText("z1");
+        btnz1Trans.setOpaque(false);
+        btnz1Trans.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnz1TransActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnz1Trans, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 50, 30));
+
+        btnz2Trans.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        btnz2Trans.setText("z2");
+        btnz2Trans.setOpaque(false);
+        btnz2Trans.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnz2TransActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnz2Trans, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 50, 30));
+
         jLabel11.setBackground(new java.awt.Color(0, 0, 204));
         jLabel11.setForeground(java.awt.Color.white);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/A3E.jpg"))); // NOI18N
-        jLabel11.setPreferredSize(new java.awt.Dimension(460, 350));
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel11.setAutoscrolls(true);
+        jLabel11.setMaximumSize(new java.awt.Dimension(451, 350));
+        jLabel11.setMinimumSize(new java.awt.Dimension(451, 350));
+        jLabel11.setName(""); // NOI18N
+        jLabel11.setPreferredSize(new java.awt.Dimension(451, 350));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -277,10 +323,10 @@ public class Calculos extends javax.swing.JFrame {
     private void restaurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaurarActionPerformed
     }//GEN-LAST:event_restaurarActionPerformed
 
-    private void transformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transformarActionPerformed
+    private void btnz2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnz2ActionPerformed
 
         
-    }//GEN-LAST:event_transformarActionPerformed
+    }//GEN-LAST:event_btnz2ActionPerformed
 
     private void restaurar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaurar2ActionPerformed
        // TODO add your handling code here:
@@ -289,6 +335,22 @@ public class Calculos extends javax.swing.JFrame {
     private void restarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restarActionPerformed
        
     }//GEN-LAST:event_restarActionPerformed
+
+    private void transformar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transformar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transformar1ActionPerformed
+
+    private void btnz1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnz1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnz1ActionPerformed
+
+    private void btnz1TransActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnz1TransActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnz1TransActionPerformed
+
+    private void btnz2TransActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnz2TransActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnz2TransActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,6 +388,10 @@ public class Calculos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnz1;
+    public javax.swing.JButton btnz1Trans;
+    public javax.swing.JButton btnz2;
+    public javax.swing.JButton btnz2Trans;
     public javax.swing.JTextField c1Arg;
     public javax.swing.JTextField c1Modulo;
     public javax.swing.JTextField c2Arg;
@@ -334,6 +400,7 @@ public class Calculos extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel4;
@@ -353,6 +420,6 @@ public class Calculos extends javax.swing.JFrame {
     public javax.swing.JButton restaurar;
     public javax.swing.JButton restaurar2;
     public javax.swing.JButton sumar;
-    public javax.swing.JButton transformar;
+    public javax.swing.JButton transformar1;
     // End of variables declaration//GEN-END:variables
 }
