@@ -50,14 +50,18 @@ public class Calculos extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        transformar1 = new javax.swing.JButton();
+        transformar = new javax.swing.JButton();
         btnz1 = new javax.swing.JButton();
         btnz1Trans = new javax.swing.JButton();
         btnz2Trans = new javax.swing.JButton();
+        resTransmod = new javax.swing.JLabel();
+        resTransarg = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(451, 350));
         setMinimumSize(new java.awt.Dimension(451, 350));
+        setPreferredSize(new java.awt.Dimension(451, 350));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -190,7 +194,7 @@ public class Calculos extends javax.swing.JFrame {
 
         resTrans.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         resTrans.setForeground(java.awt.Color.white);
-        getContentPane().add(resTrans, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 140, 20));
+        getContentPane().add(resTrans, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 140, 20));
 
         restaurar2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         restaurar2.setText("Restaurar");
@@ -225,7 +229,7 @@ public class Calculos extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel9.setForeground(java.awt.Color.white);
         jLabel9.setText("Resultado en forma fasorial:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, -1, 20));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, 20));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel10.setForeground(java.awt.Color.white);
@@ -237,15 +241,15 @@ public class Calculos extends javax.swing.JFrame {
         jLabel12.setText("Resultado en forma fasorial:");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, 20));
 
-        transformar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        transformar1.setText("Transformar");
-        transformar1.setOpaque(false);
-        transformar1.addActionListener(new java.awt.event.ActionListener() {
+        transformar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        transformar.setText("Transformar");
+        transformar.setOpaque(false);
+        transformar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transformar1ActionPerformed(evt);
+                transformarActionPerformed(evt);
             }
         });
-        getContentPane().add(transformar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        getContentPane().add(transformar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
         btnz1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         btnz1.setText("z1");
@@ -276,6 +280,8 @@ public class Calculos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnz2Trans, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 50, 30));
+        getContentPane().add(resTransmod, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        getContentPane().add(resTransarg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         jLabel11.setBackground(new java.awt.Color(0, 0, 204));
         jLabel11.setForeground(java.awt.Color.white);
@@ -285,7 +291,7 @@ public class Calculos extends javax.swing.JFrame {
         jLabel11.setMinimumSize(new java.awt.Dimension(451, 350));
         jLabel11.setName(""); // NOI18N
         jLabel11.setPreferredSize(new java.awt.Dimension(451, 350));
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -336,9 +342,9 @@ public class Calculos extends javax.swing.JFrame {
        
     }//GEN-LAST:event_restarActionPerformed
 
-    private void transformar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transformar1ActionPerformed
+    private void transformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transformarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_transformar1ActionPerformed
+    }//GEN-LAST:event_transformarActionPerformed
 
     private void btnz1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnz1ActionPerformed
         // TODO add your handling code here:
@@ -416,10 +422,12 @@ public class Calculos extends javax.swing.JFrame {
     public javax.swing.JLabel resBin;
     public javax.swing.JLabel resFas;
     public javax.swing.JLabel resTrans;
+    public javax.swing.JLabel resTransarg;
+    public javax.swing.JLabel resTransmod;
     public javax.swing.JButton restar;
     public javax.swing.JButton restaurar;
     public javax.swing.JButton restaurar2;
     public javax.swing.JButton sumar;
-    public javax.swing.JButton transformar1;
+    public javax.swing.JButton transformar;
     // End of variables declaration//GEN-END:variables
 }

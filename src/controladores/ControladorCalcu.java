@@ -27,6 +27,13 @@ public class ControladorCalcu implements ActionListener {
         this.calcu.setTitle("Calculadora de complejos");
         this.calcu.setLocationRelativeTo(null);
         this.calcu.setResizable(false);
+        this.calcu.btnz1.setVisible(false);
+        this.calcu.btnz2.setVisible(false);
+        this.calcu.resTransarg.setVisible(false);
+        this.calcu.resTransmod.setVisible(false);
+//        this.calcu.btnz1Trans.setVisible(false);
+//        this.calcu.btnz2Trans.setVisible(false);
+        
         //this.calcu.setIconImage(new Image(''));
     }
 
@@ -38,9 +45,11 @@ public class ControladorCalcu implements ActionListener {
         this.calcu.multiplicar.addActionListener(this);
         this.calcu.sumar.addActionListener(this);
         this.calcu.restar.addActionListener(this);
-        this.calcu.btnz2.addActionListener(this);
+        this.calcu.transformar.addActionListener(this);
         this.calcu.restaurar2.addActionListener(this);
         this.calcu.restaurar.addActionListener(this);
+        this.calcu.btnz1Trans.addActionListener(this);
+        this.calcu.btnz2Trans.addActionListener(this);
     }
 
     @Override
@@ -88,13 +97,28 @@ public class ControladorCalcu implements ActionListener {
           limpiar(this.calcu.pReal,this.calcu.pImag);
 
         }
-        if (e.getSource() == this.calcu.btnz2) {
+        if (e.getSource() == this.calcu.transformar) {
           Complejos z1 = new Complejos(0, 0);
          this.setBinomicaValues(z1, this.calcu.pReal, this.calcu.pImag);
          this.imprimeFasorial(z1, this.calcu.resTrans);
+         this.imprimeParaMover(z1, this.calcu.resTransmod, this.calcu.resTransarg);
 
+        } if(e.getSource() ==this.calcu.btnz1Trans){
+            this.calcu.c1Arg.setText(this.calcu.resTransarg.getText());
+            this.calcu.c1Modulo.setText(this.calcu.resTransmod.getText());
+        }
+        
+         if(e.getSource() ==this.calcu.btnz2Trans){
+            this.calcu.c2Arg.setText(this.calcu.resTransarg.getText());
+            this.calcu.c2Modulo.setText(this.calcu.resTransmod.getText());
         }
     }
+    
+    public void imprimeParaMover(Complejos z, JLabel l1, JLabel l2){
+        l1.setText(String.valueOf(z.getModulo()));
+        l2.setText(String.valueOf(z.getArgumento()));
+    }
+            
 
     public void limpiar(JTextField tf1, JTextField tf2) {
         tf1.setText("");
