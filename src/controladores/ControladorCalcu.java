@@ -31,9 +31,9 @@ public class ControladorCalcu implements ActionListener {
         this.calcu.btnz2.setVisible(false);
         this.calcu.resTransarg.setVisible(false);
         this.calcu.resTransmod.setVisible(false);
-//        this.calcu.btnz1Trans.setVisible(false);
-//        this.calcu.btnz2Trans.setVisible(false);
-        
+        this.calcu.btnz1Trans.setVisible(false);
+        this.calcu.btnz2Trans.setVisible(false);
+
         //this.calcu.setIconImage(new Image(''));
     }
 
@@ -50,6 +50,8 @@ public class ControladorCalcu implements ActionListener {
         this.calcu.restaurar.addActionListener(this);
         this.calcu.btnz1Trans.addActionListener(this);
         this.calcu.btnz2Trans.addActionListener(this);
+        this.calcu.btnz1.addActionListener(this);
+        this.calcu.btnz2.addActionListener(this);
     }
 
     @Override
@@ -62,6 +64,10 @@ public class ControladorCalcu implements ActionListener {
             this.setFasorialValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
             Complejos c3 = this.suma(z1, z2);
             this.imprime(c3);
+            this.imprimeParaMover(c3, this.calcu.resTransmod, this.calcu.resTransarg);
+
+            this.calcu.btnz1.setVisible(true);
+            this.calcu.btnz2.setVisible(true);
         }
         if (e.getSource() == this.calcu.restar) {
             Complejos z1 = new Complejos(0, 0);
@@ -71,6 +77,10 @@ public class ControladorCalcu implements ActionListener {
 
             Complejos c3 = this.resta(z1, z2);
             this.imprime(c3);
+            this.imprimeParaMover(c3, this.calcu.resTransmod, this.calcu.resTransarg);
+
+            this.calcu.btnz1.setVisible(true);
+            this.calcu.btnz2.setVisible(true);
         }
         if (e.getSource() == this.calcu.multiplicar) {
             Complejos z1 = new Complejos(0, 0);
@@ -79,6 +89,10 @@ public class ControladorCalcu implements ActionListener {
             this.setFasorialValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
             Complejos c3 = this.producto(z1, z2);
             this.imprime(c3);
+            this.imprimeParaMover(c3, this.calcu.resTransmod, this.calcu.resTransarg);
+
+            this.calcu.btnz1.setVisible(true);
+            this.calcu.btnz2.setVisible(true);
         }
 
         if (e.getSource() == this.calcu.dividir) {
@@ -88,44 +102,68 @@ public class ControladorCalcu implements ActionListener {
             this.setFasorialValues(z2, this.calcu.c2Arg, this.calcu.c2Modulo);
             Complejos c3 = this.division(z1, z2);
             this.imprime(c3);
+            this.imprimeParaMover(c3, this.calcu.resTransmod, this.calcu.resTransarg);
+
+            this.calcu.btnz1.setVisible(true);
+            this.calcu.btnz2.setVisible(true);
         }
         if (e.getSource() == this.calcu.restaurar) {
-            limpiar(this.calcu.c1Arg,this.calcu.c1Modulo);
-            limpiar(this.calcu.c2Arg,this.calcu.c2Modulo);
+            limpiar(this.calcu.c1Arg, this.calcu.c1Modulo);
+            limpiar(this.calcu.c2Arg, this.calcu.c2Modulo);
+            this.calcu.btnz1.setVisible(false);
+            this.calcu.btnz2.setVisible(false);
+            this.calcu.resBin.setText("");
+            this.calcu.resFas.setText("");
         }
         if (e.getSource() == this.calcu.restaurar2) {
-          limpiar(this.calcu.pReal,this.calcu.pImag);
+            limpiar(this.calcu.pReal, this.calcu.pImag);
+            this.calcu.btnz1Trans.setVisible(false);
+            this.calcu.btnz2Trans.setVisible(false);
+            this.calcu.resTrans.setText("");
 
         }
         if (e.getSource() == this.calcu.transformar) {
-          Complejos z1 = new Complejos(0, 0);
-         this.setBinomicaValues(z1, this.calcu.pReal, this.calcu.pImag);
-         this.imprimeFasorial(z1, this.calcu.resTrans);
-         this.imprimeParaMover(z1, this.calcu.resTransmod, this.calcu.resTransarg);
+            Complejos z1 = new Complejos(0, 0);
+            this.setBinomicaValues(z1, this.calcu.pReal, this.calcu.pImag);
+            this.imprimeFasorial(z1, this.calcu.resTrans);
+            this.imprimeParaMover(z1, this.calcu.resTransmod, this.calcu.resTransarg);
+            this.calcu.btnz1Trans.setVisible(true);
+            this.calcu.btnz2Trans.setVisible(true);
 
-        } if(e.getSource() ==this.calcu.btnz1Trans){
+        }
+        if (e.getSource() == this.calcu.btnz1Trans) {
             this.calcu.c1Arg.setText(this.calcu.resTransarg.getText());
             this.calcu.c1Modulo.setText(this.calcu.resTransmod.getText());
         }
-        
-         if(e.getSource() ==this.calcu.btnz2Trans){
+
+        if (e.getSource() == this.calcu.btnz2Trans) {
+            this.calcu.c2Arg.setText(this.calcu.resTransarg.getText());
+            this.calcu.c2Modulo.setText(this.calcu.resTransmod.getText());
+        }
+
+        if (e.getSource() == this.calcu.btnz1) {
+            this.calcu.c1Arg.setText(this.calcu.resTransarg.getText());
+            this.calcu.c1Modulo.setText(this.calcu.resTransmod.getText());
+        }
+
+        if (e.getSource() == this.calcu.btnz2) {
             this.calcu.c2Arg.setText(this.calcu.resTransarg.getText());
             this.calcu.c2Modulo.setText(this.calcu.resTransmod.getText());
         }
     }
-    
-    public void imprimeParaMover(Complejos z, JLabel l1, JLabel l2){
+
+    public void imprimeParaMover(Complejos z, JLabel l1, JLabel l2) {
         l1.setText(String.valueOf(z.getModulo()));
         l2.setText(String.valueOf(z.getArgumento()));
     }
-            
 
     public void limpiar(JTextField tf1, JTextField tf2) {
         tf1.setText("");
         tf2.setText("");
-        
+
     }
-     public void setBinomicaValues(Complejos z, JTextField jtfReal,
+
+    public void setBinomicaValues(Complejos z, JTextField jtfReal,
             JTextField jtfImg) {
         z.setpReal((float) Float.parseFloat(jtfReal.getText()));
         z.setpImaginaria((float) Float.parseFloat(jtfImg.getText()));
@@ -142,9 +180,9 @@ public class ControladorCalcu implements ActionListener {
         c2.aBinomica();
         Complejos c3 = new Complejos(0, 0);
         c3.pReal = c1.pReal + c2.pReal;
-        
+
         c3.pImaginaria = c1.pImaginaria + c2.pImaginaria;
-        
+
         return c3;
 
     }
@@ -154,9 +192,8 @@ public class ControladorCalcu implements ActionListener {
         c2.aBinomica();
         Complejos c3 = new Complejos(0, 0);
         c3.pReal = c1.pReal - c2.pReal;
-        
+
         c3.pImaginaria = c1.pImaginaria - c2.pImaginaria;
-        
 
 //        aFasorial(c3);
         return c3;
@@ -200,7 +237,7 @@ public class ControladorCalcu implements ActionListener {
     }
 
     public void imprimeBinomica(Complejos z, JLabel bin) {
-        
+
         DecimalFormat df = new DecimalFormat("#,###.##");
         bin.setText("" + df.format(z.pReal)
                 + " + j(" + df.format(z.pImaginaria) + ")");
