@@ -1,5 +1,7 @@
 package controladores;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
@@ -8,6 +10,7 @@ import javax.swing.JTextField;
 import modelo.*;
 import vista.Calculos;
 import java.text.DecimalFormat;
+import javax.swing.ImageIcon;
 
 public class ControladorCalcu implements ActionListener {
 
@@ -27,6 +30,12 @@ public class ControladorCalcu implements ActionListener {
         this.calcu.setTitle("Calculadora de complejos");
         this.calcu.setLocationRelativeTo(null);
         this.calcu.setResizable(false);
+        //ImageIcon imgicon = new ImageIcon(getClass().getResource("imagenes/iconocalculadora.png"));
+         Image myicon = Toolkit.getDefaultToolkit().
+         getImage(ClassLoader.getSystemResource("imagenes/iconocalculadora.png"));
+        this.calcu.setIconImage(myicon);
+        
+        
         this.calcu.btnz1.setVisible(false);
         this.calcu.btnz2.setVisible(false);
         this.calcu.resTransarg.setVisible(false);
