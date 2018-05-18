@@ -59,9 +59,9 @@ public class Calculos extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(451, 350));
-        setMinimumSize(new java.awt.Dimension(451, 350));
-        setPreferredSize(new java.awt.Dimension(451, 350));
+        setMaximumSize(new java.awt.Dimension(461, 374));
+        setMinimumSize(new java.awt.Dimension(461, 374));
+        setPreferredSize(new java.awt.Dimension(461, 374));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -287,11 +287,11 @@ public class Calculos extends javax.swing.JFrame {
         jLabel11.setForeground(java.awt.Color.white);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/A3E.jpg"))); // NOI18N
         jLabel11.setAutoscrolls(true);
-        jLabel11.setMaximumSize(new java.awt.Dimension(451, 350));
-        jLabel11.setMinimumSize(new java.awt.Dimension(451, 350));
+        jLabel11.setMaximumSize(new java.awt.Dimension(461, 374));
+        jLabel11.setMinimumSize(new java.awt.Dimension(461, 374));
         jLabel11.setName(""); // NOI18N
-        jLabel11.setPreferredSize(new java.awt.Dimension(451, 350));
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 380));
+        jLabel11.setPreferredSize(new java.awt.Dimension(461, 374));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
